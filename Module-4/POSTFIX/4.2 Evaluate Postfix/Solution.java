@@ -1,57 +1,70 @@
- import java.util.Stack;
-class PostFix {
+import java.util.Scanner;
 
-	static int prefer(char ch)
+class Solution3
+{
+	public static void main(String args[])
 	{
-		switch(ch)
+		Scanner sc=new Scanner(System.in);
+		String str=sc.nextLine();
+		String[] d=str.split(" ");
+		Stack st=new Stack(d.length);
+        int sol=0;
+		for(int i=0;i<d.length;i++)
 		{
-		case'+':
-		case'-':
-			return 1;
-		case'*':
-		case'/':
-			return 2;
-		case'^':
-			return 3;
-		}
-		return -1;
+			String s=d[i];
+			//System.out.println(s);
+				switch(s)
+				{
+				case "+":
+					int a=st.pop();
+					int b=st.pop();
+					sol=a+b;
+					st.push(sol);
+					break;
+				case "*":
+					a=st.pop();
+					b=st.pop();
+					sol=a*b;
+					st.push(sol);
+					break;
+				default :
+					int e=Integer.parseInt(s);
+					st.push(e);
+					
+				}
+				//System.out.println(sol);
+			}
+				
+		System.out.println(sol);
 	}
-	static String infixToPostfix(String exp)
+}
+class Stack
+{
+	int top=0;
+	int [] s;
+	public Stack(int cap)
 	{
-		String result=new String("");
-		Stack<Character> s=new Stack<>();
-		for(int i=0;i<exp.length();++i)
-		{
-			char c=exp.charAt(i);
-			if (Character.isLetterOrDigit(c)) 
-	            result += c;
-			else if (c == '(') 
-                s.push(c);
-			else if (c == ')') 
-            { 
-                while (!s.isEmpty() && s.peek() != '(') 
-                    result += s.pop(); 
-                  
-                if (!s.isEmpty() && s.peek() != '(') 
-                    return "Invalid Expression"; // invalid expression                 
-                else
-                    s.pop(); 
-            } 
-            else // an operator is encountered 
-            { 
-                while (!s.isEmpty() && prefer(c) <= prefer(s.peek())) 
-                    result += s.pop(); 
-                s.push(c); 
-            } 
-		}
-		while (!s.isEmpty()) 
-            result += s.pop(); 
-       
-        return result; 
+		s=new int[cap];
 	}
-	public static void main(String[] args)
+	public boolean isEmpty()
 	{
-		String exp="a+b*(c^d-e)^(f+g*h)-i";
-		System.out.println(infixToPostfix(exp));
+		return top==0;
+	}
+	public void push(int a)
+	{
+		s[top++]=a;
+	}
+	public int pop()
+	{
+		int b=s[--top];
+		return b;
+	}
+	public boolean isFull()
+	{
+		return top==s.length;
+	}
+	public int peek()
+	{
+		return s[top];
 	}
 }
