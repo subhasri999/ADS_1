@@ -1,0 +1,23 @@
+1.Output-0
+2.Output-deepak
+3.Stack push and pop
+Output-b,d,e
+4.minimum-10
+  maximum-10
+5.
+6.Order of growth=O(nlogn)
+7.Order of growth=O(N)
+8.Order of growth=O(1)
+9.Order of growth=O(N^2)times
+10.
+QuickFind Algorithm
+Input		 0	1	2	3	4	5	6	7	8	9	
+union(3,4)	 0      1       2       4       4       5       6       7       8       9	
+union(4,9)	 0      1       2       9       9       5       6       7       8       9
+union(8,0)	 0	1	2	9	9	5	6	7	0	9
+union(2,3)	 0	1	9	9	9	5	6	7	0	9
+union(5,6) 	 0      1       9       9       9       6       6       7       0       9
+union(5,9) 	 0      1       9       9       9       9       9       7       0       9
+union(7,3) 	 0      1       9       9       9       9       9       9       0       9
+union(4,8)	 0      1       0       0       0       0       0       0       0       0
+union(6,1)	 1      1       1       1       1       1       1       1       1	1
