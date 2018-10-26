@@ -1,0 +1,29 @@
+public int count(int n)
+{
+  if(n <= 6)
+{
+    return 0;
+}
+  if(n%10 == 7)
+{
+    return 1 + count(n/10);
+}
+  return count(n/10);
+}
+
+
+1. count(717)
+Output: returns 2
+
+2.count(7)
+Output: returns 1
+
+3. count(123)
+Output: returns 0
+
+4. count(47571)
+Output: returns 2
+
+5. count(99999)
+Output: returns 0
+

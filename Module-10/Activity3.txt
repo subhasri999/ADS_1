@@ -1,0 +1,21 @@
+public int triangle(int rows)
+{
+  if(rows == 0)
+{
+    return 0;
+}
+  return rows + triangle(rows-1);
+}
+
+triangle(3) - returns 6
+
+triangle(2) - returns 3
+
+triangle(6) - returns 21
+
+triangle(4) - returns 10
+
+triangle(7) - returns 28
+
+ The function is called until the 'if' condition is satisfied.
+So every parameter passed returns 0.

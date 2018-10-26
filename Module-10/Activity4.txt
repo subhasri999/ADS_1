@@ -1,0 +1,23 @@
+public int bunnyEars(int bunnies)
+{
+	if(bunnies == 0)
+		return 0;
+	if(bunnies % 2 == 1)
+		return 2 + bunnyEars(bunnies-1);
+	return 3 + bunnyEars(bunnies-1);
+}
+
+1.bunnyEars(0)
+returns 0
+
+2.bunnyEars(2)
+returns 6
+
+3.bunnyEars(4)
+returns 10
+
+4.bunnyEars(5)
+returns 13
+
+5.bunnyEars(10)
+returns 26

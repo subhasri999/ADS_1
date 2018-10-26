@@ -1,0 +1,17 @@
+private static int partition(Comparable[ ] a, int lo, int hi) {
+        int i = lo;
+        int j = hi + 1;
+        Comparable v = a[lo];
+        while (true) { 
+            while (less(a[++i], v)) { //Blank 1
+                if (i == hi) break; //Blank 2
+            }
+while (less(v, a[--j])) { // Blank 3
+                if (j == lo) break;     // Blank 4
+}
+            if (i >= j) break;
+            exch(a, i, j);
+        }
+        exch(a,lo, j);
+        return j;
+    }
