@@ -1,0 +1,3 @@
+P R I O * R * * I * T * Y * * * Q U E * * * U * E
+
+the sequence of values returned by remove the maximum operations-E

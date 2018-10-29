@@ -1,0 +1,8 @@
+Suppose if we built a minPQ with following keys, then answer the following questions
+I A M S T E V E R O G E R S
+
+The output of the minPQ array-A E E I G E V R S O T M R S
+
+The child nodes for node ‘A’-E,E
+
+The root node after deleteMin() called 5 times-
