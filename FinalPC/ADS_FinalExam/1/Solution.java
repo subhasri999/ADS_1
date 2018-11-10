@@ -40,7 +40,7 @@ public class Solution {
 	public static void main(String args[])
 	{
 		Scanner sc= new Scanner(System.in);		
-		System.out.println("No of Student Data Records");
+		//System.out.println("No of Student Data Records");
 		int N=sc.nextInt();
 		Node Node[]=new Node[N*20];
 		Hash h=new Hash(N*20);
